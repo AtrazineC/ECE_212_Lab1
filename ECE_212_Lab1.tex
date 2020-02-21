@@ -48,10 +48,10 @@
 
 \title{\textbf{\Huge{
 \begin{center}
-Introduction to Assembly Language\\
+Introduction to\\ Assembly Language\\
 \end{center}
 }}}
-\author{Benjamin Kong\\Lora Ma\\ \\ECE 212 Lab Section H11}
+\author{Benjamin Kong || 1573684\\Lora Ma ||||| 1570935\\ \\ECE 212 Lab Section H11}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -62,19 +62,37 @@ Introduction to Assembly Language\\
 \begin{document} 
 \pagenumbering{gobble} 
 \maketitle 
+\thispagestyle{empty}
 \tableofcontents 
 \newpage
 \pagenumbering{arabic}
 
 \begin{multicols*}{2}
 
-\section{Abstract}
+\section{Introduction}
 
-In this lab, we implemented a 7-segment LED decoder. 
-The 7-segment LED decoder displayed the hex value of four binary inputs. 
-We also created a counter that incremented the value displayed on the display each second from 0 to F. 
-Our implementation was created using VHDL and also implemented on the Zybo Z7 board such that we could see the 7-segment LED decoder in action. 
-In this report, we will cover the lab as a whole and discuss our findings.
+Assembly language is a low-level programming language that is converted to machine code using an assembler. 
+Assembly language uses \textit{mnemonics} to represent low-level machine instructions, and this makes it much more readable than machine code.
+It is important to note that assembly language is specific to a particular computer architecture and hence may or may not work on different systems.
+
+The purpose of this lab was to become more familiar with assembly language using the NetBurner ColdFire microcontroller board. 
+In order to gain experience with assembly language programming, two different programs were created using assembly. 
+In the first part of the lab (part A), we created a program that converted an Ascii character to its hexadecimal equivalent. 
+For example, `5' is converted to `5' and `B' is converted to `11.'
+However, if a character without a hexadecimal equivalent is entered, such as `J,' then an error code results.
+
+For the second part of the lab (part B), we created a program that converts an Ascii letter into its uppercase or lowercase equivalent.
+For example, `a' is converted to `A' while `E' is converted to `e.'
+If an invalid Ascii character is input (such as an ampersand `\&,' for example), an error code results.
+
+\section{Design}
+
+\subsection{Part A}
+
+\subsection{Part B}
+
+
+
 
 \end{multicols*}
 
