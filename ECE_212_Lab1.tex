@@ -1,0 +1,77 @@
+\documentclass[10pt, letterpaper, titlepage]{article} % Set font here.
+% Use 'article' for simple documents; use 'report' for larger documents with chapters;
+% use 'book' for even larger documents with parts.
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{color,graphicx,overpic} 
+\usepackage{fancyhdr} % header/footer stuff
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{mathtools} % more math stuff
+\usepackage{siunitx} % for SI units, ex. $3.5 ~ \si{kg.s^{-2}}$
+\usepackage{hyperref} % for hyperlinks
+%\usepackage{apple_emoji}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{float}
+\usepackage{blindtext}
+\usepackage{longtable}
+\usepackage{scrextend}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{calc}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage[normalem]{ulem}
+
+\definecolor{mycolor}{rgb}{0, 0, 0}
+
+\pdfinfo{
+  /Title (bkongLab4.pdf)
+  /Creator (Benjamin Kong)
+  /Producer (pdfTeX 1.40.0)
+  /Author (Benjamin Kong)
+  /Subject (Resume)
+  /Keywords (pdflatex, latex,pdftex,tex)}
+  
+
+\geometry{top=2.7cm,left=1.8cm,right=1.8cm,bottom=2.7cm}
+\setlength{\headheight}{17pt}
+\renewcommand{\baselinestretch}{1.5} 
+\setlength{\parskip}{0.3cm}
+\setlength{\parindent}{0.6cm}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+\newcommand{\barrows}{\textcolor{blue}{\Longrightarrow}\quad}
+\newcommand{\barrow}{\quad\textcolor{blue}{\Longrightarrow}\quad}  
+\newcommand{\sumi}[1][1]{ \sum_{n={#1}}^{\infty} }
+\newcommand{\limi}[1][n]{ \lim_{{#1}\to\infty} }
+
+\title{\textbf{\Huge{
+\begin{center}
+7-Segment LED Decoder\\
+\end{center}
+}}}
+\author{Benjamin Kong\\Lora Ma\\ \\ECE 210 Lab Section D45\\Mahsa Taheri}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Benjamin Kong \& Lora Ma}
+\lhead{\textit{7-Segment LED Decoder}}
+\rfoot{Page \thepage}
+
+\begin{document} 
+\maketitle
+
+\begin{multicols*}{2}
+
+\section{Abstract}
+
+In this lab, we implemented a 7-segment LED decoder. 
+The 7-segment LED decoder displayed the hex value of four binary inputs. 
+We also created a counter that incremented the value displayed on the display each second from 0 to F. 
+Our implementation was created using VHDL and also implemented on the Zybo Z7 board such that we could see the 7-segment LED decoder in action. 
+In this report, we will cover the lab as a whole and discuss our findings.
+
+\end{multicols*}
+
+\end{document}
