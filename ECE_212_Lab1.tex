@@ -150,6 +150,13 @@ If the value is smaller than the hex value `A,' then it is an invalid character.
 If the value is greater than `F', we check if the character is between the hex value `a' and `f.' 
 If the value is less than the hex value `a' or greater than the hex value `f,' it is an invalid character. After we've established whether or not the character is valid, we convert the value to its hexadecimal equivalent.
 
+\begin{figure}[H]
+   \includegraphics[width=0.38\textwidth]{PartADiagram.png}
+   \centering  
+   \caption{Flow chart for part A.} 
+   \label{figure:1}
+\end{figure}
+
 \subsection{Part B}
 First, we initialize address registers $a2$ and $a3$ with addresses and store the number of times the program will loop in a data register. 
 Then, we check if at any point in our program the enter key is pressed. 
@@ -161,7 +168,12 @@ If the character is either less than `a' or greater than `z,' it is an invalid c
 If we have an invalid character, the character is replaced with an error code and we move on to the next value. 
 If we have a valid character, we convert the letter to its lowercase/uppercase equivalent.
 
-
+\begin{figure}[H]
+   \includegraphics[width=0.38\textwidth]{PartBDiagram.png}
+   \centering  
+   \caption{Flow chart for part B.} 
+   \label{figure:1}
+\end{figure}
 
 \section{Testing}
 \subsection{Part A}
