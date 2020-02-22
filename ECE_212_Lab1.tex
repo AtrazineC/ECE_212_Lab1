@@ -138,17 +138,47 @@ If an invalid Ascii character is input (such as an ampersand `\&,' for example),
 
 \section{Design}
 \subsection{Part A}
-First, in our program we initialize address registers $a2$ and $a3$ with addresses and store the number of times the program will loop in a data register. Then, we check if at any point in our program the enter key is pressed. If it is pressed, the program exits. Otherwise, we check if our character is valid through a series of tests. First, we check if the given value is less than the hex value '0'. If it is, then it is an invalid character and the character is replaced with an error code. If the value is greater than the hex value '0', then we compare the value to the hex value '9'. If the value is greater than '9', we further test to see if the value is a character between the hex value 'A' and the hex value 'F'. If the value is smaller than the hex value 'A', then it is an invalid character. If the value is greater than F, we check if the character is between the hex value 'a' and 'f'. If the value is less than the hex value 'a' or greater than the hex value 'f', it is an invalid character. After we've established whether or not the character is valid, we convert the value to it's hexadecimal equivalent.
+First, in our program we initialize address registers $a2$ and $a3$ with addresses and store the number of times the program will loop in a data register. 
+Then, we check if at any point in our program the enter key is pressed. 
+If it is pressed, the program exits. 
+Otherwise, we check if our character is valid through a series of tests. 
+First, we check if the given value is less than the hex value `0.'
+If it is, then it is an invalid character and the character is replaced with an error code. 
+If the value is greater than the hex value `0,' then we compare the value to the hex value `9.'
+If the value is greater than `9,' we further test to see if the value is a character between the hex value `A' and the hex value `F.'
+If the value is smaller than the hex value `A,' then it is an invalid character. 
+If the value is greater than `F', we check if the character is between the hex value `a' and `f.' 
+If the value is less than the hex value `a' or greater than the hex value `f,' it is an invalid character. After we've established whether or not the character is valid, we convert the value to its hexadecimal equivalent.
 
 \subsection{Part B}
-First, we initialize address registers $a2$ and $a3$ with addresses and store the number of times the program will loop in a data register. Then, we check if at any point in our program the enter key is pressed. If it is pressed, the program exits. Otherwise, we check if our character is valid through a series of tests. First, we check if the character is between the hex value 'A' and the hex value 'Z'. If it is less than 'A', then it is not a valid character. If it is greater than 'Z', we further test to see if the character is between the hex value 'a' and the hex value 'z'. If the character is either less than 'a' or greater than 'z', it is an invalid character. If we have an invalid character, the character is replaced with an error code and we move on to the next value. If we have a valid character, we convert the letter to it's lowercase/uppercase equivalent.
+First, we initialize address registers $a2$ and $a3$ with addresses and store the number of times the program will loop in a data register. 
+Then, we check if at any point in our program the enter key is pressed. 
+If it is pressed, the program exits. Otherwise, we check if our character is valid through a series of tests. 
+First, we check if the character is between the hex value `A' and the hex value `Z.' 
+If it is less than `A,' then it is not a valid character. 
+If it is greater than `Z,' we further test to see if the character is between the hex value `a' and the hex value `z.' 
+If the character is either less than `a' or greater than `z,' it is an invalid character. 
+If we have an invalid character, the character is replaced with an error code and we move on to the next value. 
+If we have a valid character, we convert the letter to its lowercase/uppercase equivalent.
 
 
 
 \section{Testing}
 \subsection{Part A}
+If properly implemented, part A converts valid Ascii characters that are hexadecimal values into their decimal equivalent. 
+In order to test our implementation of part A, we first ran the code with the manual inputs. 
+For example, we input various valid and invalid Ascii characters such as `A' (which would be considered valid and should result in an output of `10') and `J' (which would be considered invalid and should result in the error code). 
+Once we were confident that our code was working, we moved on to the test cases provided on eClass. 
+Upon running these test cases under the supervision of a TA, our program was confirmed to be in working order and we moved on to the next part of the lab, part B.
+For a screenshot of the MTTY terminal, please take a look at the appendix.
 
 \subsection{Part B}
+If properly implemented, part B converts valid Ascii characters into their lowercase or uppercase counterparts. 
+For example, `A' would be converted to `a,' `j' would be converted to `J,' and `\%' would result in an error code since `\%' doesn't have an uppercase or lowercase equivalent. 
+After finishing our code for part B, we again tested manual inputs to check that our program functioned as expected.
+Once we were confident that our implementation was correct, we moved on to the test cases provided on eClass.
+Using these test cases, a TA confirmed that our code functioned correctly and we cleaned up our workstation.
+For a screenshot of the MTTY terminal, please take a look at the appendix.
 
 
 \section{Questions}
@@ -169,12 +199,24 @@ at the beginning and decrement this each time a data entry is converted.
 If the value at $d6$ is zero, then we stop converting data entries.
 
 \section{Conclusion}
+The purpose of this lab was to become more familiar with assembly language using the NetBurner Coldfire microcontroller board.  
+In order to do this, we completed two parts: part A, which involved converting valid Ascii characters into the equivalent hexadecimal value; and part B, which involved converting valid uppercase Ascii characters into their lowercase equivalent and vice versa for valid lowercase Ascii characters.
 
+Overall, the lab was a success: both parts of the lab were completed in a timely fashion and our understanding of assembly language was increased. 
+Both part A and part B of the lab were shown to work with the test cases provided on eClass.
+In the future, we would like to become even more proficient with assembly language and we look forwards to completing future labs. :)
 
 \end{multicols*}
 
+\newpage
 
 \section{Appendix}
+\subsection{Part A MTTY Screenshot}
+
+
+\subsection{Part B MTTY Screenshot}
+
+
 \subsection{Part A Assembler Code}
 \begin{lstlisting}
 	/* DO NOT MODIFY THIS --------------------------------------------*/
