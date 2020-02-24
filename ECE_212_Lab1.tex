@@ -9,7 +9,7 @@
 \usepackage{mathtools} % more math stuff
 \usepackage{siunitx} % for SI units, ex. $3.5 ~ \si{kg.s^{-2}}$
 \usepackage{hyperref} % for hyperlinks
-%\usepackage{apple_emoji}
+\usepackage{apple_emoji}
 \usepackage{multicol}
 \usepackage{array}
 \usepackage{float}
@@ -25,6 +25,9 @@
 
 \usepackage{listings}
 \usepackage{xcolor}
+
+\newcommand*\B{\includegraphics[height=1.5em,valign=B,raise=-0.2em]{BigB.png}}
+\newcommand*\fire{\includegraphics[height=1.5em,valign=B,raise=-0.2em]{Fire.png}}
 
 \definecolor{comment}{RGB}{140, 140, 140}
 \definecolor{text}{RGB}{204, 204, 204}
@@ -100,15 +103,15 @@
 
 \title{\textbf{\Huge{
 \begin{center}
-Introduction to\\ Assembly Language\\
+Introduction to\\ Assembly Language\\ 💯💯💯\\
 \end{center}
 }}}
-\author{Benjamin Kong | 1573684\\Lora Ma |||| 1570935\\ \\ECE 212 Lab Section H11}
+\author{\B enjamin Kong | 1573684\\Lora Ma ||||| 1570935\\ \\ECE 212 Lab Section H11}
 
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{Benjamin Kong \& Lora Ma}
-\lhead{\textit{Introduction to Assembly Language}}
+\rhead{\B enjamin Kong \& Lora Ma}
+\lhead{\textit{Introduction to Assembly Language} 💯💯💯}
 \rfoot{Page \thepage}
 
 \begin{document} 
@@ -124,17 +127,17 @@ Introduction to\\ Assembly Language\\
 \section{Introduction}
 Assembly language is a low-level programming language that is converted to machine code using an assembler. 
 Assembly language uses \textit{mnemonics} to represent low-level machine instructions, and this makes it much more readable than machine code.
-It is important to note that assembly language is specific to a particular computer architecture and hence may or may not work on different systems.
+It is important to note that assembly language is specific to a particular computer architecture and hence may or may not work on different systems. 🍄
 
 The purpose of this lab was to become more familiar with assembly language using the NetBurner ColdFire microcontroller board. 
 In order to gain experience with assembly language programming, two different programs were created using assembly. 
 In the first part of the lab (part A), we created a program that converted an Ascii character to its hexadecimal equivalent. 
 For example, `5' is converted to `5' and `B' is converted to `11.'
-However, if a character without a hexadecimal equivalent is entered, such as `J,' then an error code results.
+However, if a character without a hexadecimal equivalent is entered, such as `J,' then an error code results. 🍄
 
 For the second part of the lab (part B), we created a program that converts an Ascii letter into its uppercase or lowercase equivalent.
 For example, `a' is converted to `A' while `E' is converted to `e.'
-If an invalid Ascii character is input (such as an ampersand `\&,' for example), an error code results.
+If an invalid Ascii character is input (such as an ampersand `\&,' for example), an error code results. 🍄
 
 
 \section{Design}
@@ -149,12 +152,12 @@ If the value is greater than the hex value `0,' then we compare the value to the
 If the value is greater than `9,' we further test to see if the value is a character between the hex value `A' and the hex value `F.'
 If the value is smaller than the hex value `A,' then it is an invalid character. 
 If the value is greater than `F', we check if the character is between the hex value `a' and `f.' 
-If the value is less than the hex value `a' or greater than the hex value `f,' it is an invalid character. After we've established whether or not the character is valid, we convert the value to its hexadecimal equivalent.
+If the value is less than the hex value `a' or greater than the hex value `f,' it is an invalid character. After we've established whether or not the character is valid, we convert the value to its hexadecimal equivalent. \fire
 
 \begin{figure}[H]
    \includegraphics[width=0.38\textwidth]{PartADiagram.png}
    \centering  
-   \caption{Flow chart for part A.} 
+   \caption{Flow chart for part A. 😎} 
    \label{figure:1}
 \end{figure}
 
@@ -167,12 +170,12 @@ If it is less than `A,' then it is not a valid character.
 If it is greater than `Z,' we further test to see if the character is between the hex value `a' and the hex value `z.' 
 If the character is either less than `a' or greater than `z,' it is an invalid character. 
 If we have an invalid character, the character is replaced with an error code and we move on to the next value. 
-If we have a valid character, we convert the letter to its lowercase/uppercase equivalent.
+If we have a valid character, we convert the letter to its lowercase/uppercase equivalent. \fire
 
 \begin{figure}[H]
    \includegraphics[width=0.38\textwidth]{PartBDiagram.png}
    \centering  
-   \caption{Flow chart for part B.} 
+   \caption{Flow chart for part B. 😎} 
    \label{figure:2}
 \end{figure}
 
@@ -183,7 +186,7 @@ In order to test our implementation of part A, we first ran the code with the ma
 For example, we input various valid and invalid Ascii characters such as `A' (which would be considered valid and should result in an output of `10') and `J' (which would be considered invalid and should result in the error code). 
 Once we were confident that our code was working, we moved on to the test cases provided on eClass. 
 Upon running these test cases under the supervision of a TA, our program was confirmed to be in working order and we moved on to the next part of the lab, part B.
-For a screenshot of the MTTY terminal, please take a look at the appendix.
+For a screenshot of the MTTY terminal, please take a look at the appendix. 💣
 
 \subsection{Part B}
 If properly implemented, part B converts valid Ascii characters into their lowercase or uppercase counterparts. 
@@ -191,7 +194,7 @@ For example, `A' would be converted to `a,' `j' would be converted to `J,' and `
 After finishing our code for part B, we again tested manual inputs to check that our program functioned as expected.
 Once we were confident that our implementation was correct, we moved on to the test cases provided on eClass.
 Using these test cases, a TA confirmed that our code functioned correctly and we cleaned up our workstation.
-For a screenshot of the MTTY terminal, please take a look at the appendix.
+For a screenshot of the MTTY terminal, please take a look at the appendix. 💣
 
 
 \section{Questions}
@@ -199,7 +202,7 @@ For a screenshot of the MTTY terminal, please take a look at the appendix.
 
 This would not be an issue since input is limited to 100 inputs. 
 This is because the program decrements the value stored at data register $d7$ each time a character is input and the program can only loop if the value at $d7$ is not zero. 
-As soon as 100 inputs are present and processed, the value of $d7$ will be zero and the program will exit.
+As soon as 100 inputs are present and processed, the value of $d7$ will be zero and the program will exit. 🙃
 
 \textbf{Q2).} \textit{How can our code be modified to provide a variable address range? For example, what if I only wanted to convert the first 10 data entries?}
 
@@ -209,15 +212,15 @@ For example, we could add the line
 	move.l #10, %d6
 \end{lstlisting}
 at the beginning and decrement this each time a data entry is converted. 
-If the value at $d6$ is zero, then we stop converting data entries.
+If the value at $d6$ is zero, then we stop converting data entries. 🙃
 
 \section{Conclusion}
 The purpose of this lab was to become more familiar with assembly language using the NetBurner Coldfire microcontroller board.  
-In order to do this, we completed two parts: part A, which involved converting valid Ascii characters into the equivalent hexadecimal value; and part B, which involved converting valid uppercase Ascii characters into their lowercase equivalent and vice versa for valid lowercase Ascii characters.
+In order to do this, we completed two parts: part A, which involved converting valid Ascii characters into the equivalent hexadecimal value; and part B, which involved converting valid uppercase Ascii characters into their lowercase equivalent and vice versa for valid lowercase Ascii characters. 😂
 
 Overall, the lab was a success: both parts of the lab were completed in a timely fashion and our understanding of assembly language was increased. 
 Both part A and part B of the lab were shown to work with the test cases provided on eClass.
-In the future, we would like to become even more proficient with assembly language and we look forwards to completing future labs. :)
+In the future, we would like to become even more proficient with assembly language and we look forwards to completing future labs. 😂
 
 \end{multicols*}
 
@@ -228,14 +231,14 @@ In the future, we would like to become even more proficient with assembly langua
 \begin{figure}[H]
    \includegraphics[width=0.38\textwidth]{PartA_1.png}
    \centering  
-   \caption{Screenshot of MTTY output for part A using DataStorage.s.} 
+   \caption{Screenshot of MTTY output for part A using DataStorage.s. 😎} 
    \label{figure:3}
 \end{figure}
 
 \begin{figure}[H]
    \includegraphics[width=0.38\textwidth]{PartA_2.png}
    \centering  
-   \caption{Screenshot of MTTY output for part A using DataStorage1.s.} 
+   \caption{Screenshot of MTTY output for part A using DataStorage1.s. 😎} 
    \label{figure:4}
 \end{figure}
 
@@ -243,14 +246,14 @@ In the future, we would like to become even more proficient with assembly langua
 \begin{figure}[H]
    \includegraphics[width=0.38\textwidth]{PartB_1.png}
    \centering  
-   \caption{Screenshot of MTTY output for part B using DataStorage.s.} 
+   \caption{Screenshot of MTTY output for part B using DataStorage.s. 😎} 
    \label{figure:5}
 \end{figure}
 
 \begin{figure}[H]
    \includegraphics[width=0.38\textwidth]{PartB_2.png}
    \centering  
-   \caption{Screenshot of MTTY output for part B using DataStorage1.s.} 
+   \caption{Screenshot of MTTY output for part B using DataStorage1.s. 😎} 
    \label{figure:6}
 \end{figure}
 
