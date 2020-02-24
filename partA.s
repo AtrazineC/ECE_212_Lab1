@@ -55,7 +55,7 @@ bra check                    /* go to check */
 lower:
 cmpi.l #0x61, %d2            /*compare the value to hex 'a' */
 blt error                    /* not a valid character; go to error */
-cmpi.l #0x66, %d2            / *compare the value to hex 'f' */
+cmpi.l #0x66, %d2            /* compare the value to hex 'f' */
 bgt error                    /* go to continue to keep testing */
 move.l #0x57, %d2            /* move value to data register */
 sub.l %d2, (%a3)             /* subtract d2 from value in address*/

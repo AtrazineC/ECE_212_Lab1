@@ -11,11 +11,11 @@ movem.l %d2-%d7/%a2-%a5,(%a7)
 /******************************************************************/
 /* General Information ********************************************/
 /* File Name: Lab1b.s *********************************************/
-/* Names of Students: Lora Ma and Benjamin Kong                   **/
+/* Names of Students: Lora Ma and Benjamin Kong                  **/
 /* Date: 7 February 2020                                         **/
 /* General Description:                                          **/
 /* Convert ASCII char from uppercase to lowercase and lowercase  **/
-   to uppercase                                                  **/
+/*   to uppercase                                                **/
 /******************************************************************/
 
 move.l #0x43000000, %a2      /* address of values to convert */

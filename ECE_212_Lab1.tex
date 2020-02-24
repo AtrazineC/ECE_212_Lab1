@@ -26,18 +26,19 @@
 \usepackage{listings}
 \usepackage{xcolor}
 
-\definecolor{codegreen}{rgb}{0.3,0.3,0.3}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{comment}{RGB}{140, 140, 140}
+\definecolor{text}{RGB}{204, 204, 204}
+\definecolor{string}{rgb}{0.58,0,0}
+\definecolor{backcolour}{RGB}{27, 30, 39}
+\definecolor{variable}{RGB}{244, 63, 78}
 
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{red},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\ttfamily\footnotesize,
+    commentstyle=\color{comment},
+    keywordstyle=\color{variable},
+    numberstyle=\tiny\color{text},
+    stringstyle=\color{string},
+    basicstyle=\ttfamily\footnotesize\color{text},
     breakatwhitespace=false,         
     breaklines=true,                 
     captionpos=b,                    
@@ -172,7 +173,7 @@ If we have a valid character, we convert the letter to its lowercase/uppercase e
    \includegraphics[width=0.38\textwidth]{PartBDiagram.png}
    \centering  
    \caption{Flow chart for part B.} 
-   \label{figure:1}
+   \label{figure:2}
 \end{figure}
 
 \section{Testing}
@@ -223,11 +224,35 @@ In the future, we would like to become even more proficient with assembly langua
 \newpage
 
 \section{Appendix}
-\subsection{Part A MTTY Screenshot}
+\subsection{Part A MTTY Screenshots}
+\begin{figure}[H]
+   \includegraphics[width=0.38\textwidth]{PartA_1.png}
+   \centering  
+   \caption{Screenshot of MTTY output for part A using DataStorage.s.} 
+   \label{figure:3}
+\end{figure}
 
+\begin{figure}[H]
+   \includegraphics[width=0.38\textwidth]{PartA_2.png}
+   \centering  
+   \caption{Screenshot of MTTY output for part A using DataStorage1.s.} 
+   \label{figure:4}
+\end{figure}
 
-\subsection{Part B MTTY Screenshot}
+\subsection{Part B MTTY Screenshots}
+\begin{figure}[H]
+   \includegraphics[width=0.38\textwidth]{PartB_1.png}
+   \centering  
+   \caption{Screenshot of MTTY output for part B using DataStorage.s.} 
+   \label{figure:5}
+\end{figure}
 
+\begin{figure}[H]
+   \includegraphics[width=0.38\textwidth]{PartB_2.png}
+   \centering  
+   \caption{Screenshot of MTTY output for part B using DataStorage1.s.} 
+   \label{figure:6}
+\end{figure}
 
 \subsection{Part A Assembler Code}
 \begin{lstlisting}
@@ -286,12 +311,12 @@ In the future, we would like to become even more proficient with assembly langua
 	
 	/* lower: checks if it's a lowercase ascii character */
 	lower:
-	cmpi.l #0x61, %d2            /*compare the value to hex 'a' */
+	cmpi.l #0x61, %d2            /* compare the value to hex 'a' */
 	blt error                    /* not a valid character; go to error */
-	cmpi.l #0x66, %d2            / *compare the value to hex 'f' */
+	cmpi.l #0x66, %d2            /* compare the value to hex 'f' */
 	bgt error                    /* go to continue to keep testing */
 	move.l #0x57, %d2            /* move value to data register */
-	sub.l %d2, (%a3)             /* subtract d2 from value in address*/
+	sub.l %d2, (%a3)             /* subtract d2 from value in address */
 	bra check                    /* go to check */
 	
 	
@@ -344,11 +369,11 @@ In the future, we would like to become even more proficient with assembly langua
 	/******************************************************************/
 	/* General Information ********************************************/
 	/* File Name: Lab1b.s *********************************************/
-	/* Names of Students: Lora Ma and Benjamin Kong                   **/
+	/* Names of Students: Lora Ma and Benjamin Kong                  **/
 	/* Date: 7 February 2020                                         **/
 	/* General Description:                                          **/
 	/* Convert ASCII char from uppercase to lowercase and lowercase  **/
-	   to uppercase                                                  **/
+	/*   to uppercase                                                **/
 	/******************************************************************/
 	
 	move.l #0x43000000, %a2      /* address of values to convert */
